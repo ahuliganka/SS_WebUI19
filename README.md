@@ -1,1 +1,1 @@
-Completed tasks 1,2,4,7
+Implementation of viewing results on a page

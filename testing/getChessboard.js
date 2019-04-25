@@ -8,7 +8,7 @@ let getChessboard = (length, height, symbol) => {
     return '{status: ‘' + Error.status + '’, \nreason: ‘' + Error.reason[4] + ' of the symbol\'}';
   }  
 
-  if ( !isPositive ) {
+  if ( length < 0 || height < 0 ) {
     return '{status: ‘' + Error.status + '’, \nreason: ‘' + Error.reason[1] + ' of width or height\'}';
   }  
   

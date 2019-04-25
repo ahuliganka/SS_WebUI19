@@ -14,22 +14,20 @@ let isNumber = arg => {
   return arg;
 }
 
+let isPositive = (length, height) => {
+  return ( length < 0 || height < 0 );
+}
+
 let isParameter = (arg) => {
-  if ( typeof arg === 'undefined' ) {
-    return false;
-  }
-  return true;
+  return (arg) ? arg : `{status: ‘failed’, \nreason: ‘Parameter did not pass to the function ` + chooseFibonacciFunction.name + `\'}`;
 }
 
 let isArgs = ( arg1, arg2, arg3 ) => {
   return (typeof arg1 !== 'undefined' ||
-  typeof arg2 !== 'undefined' || typeof arg3 !== 'undefined') ? true : false;
+  typeof arg2 !== 'undefined' || typeof arg3 !== 'undefined');
 }
 
-// let isParameters = ( arg1, arg2 ) => {
-//   if (typeof arg1 === 'undefined' || typeof arg2 === 'undefined') {
-//     return false;
-//   }
-//   return true;
-// }
+let isParameters = ( arg1, arg2 ) => {
+  return (typeof arg1 === 'undefined' || typeof arg2 === 'undefined');
+}
 

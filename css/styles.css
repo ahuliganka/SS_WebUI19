@@ -1,0 +1,140 @@
+.page {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.task__heading {
+  margin: 30px 0;
+}
+
+.task, .menu__item, .task7 .task-form {
+  display: none;
+}
+
+.menu__item-field {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  color: white;
+  line-height: 30px;
+  text-align: center;
+  background-color: lightsteelblue;
+  margin-left: -5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+  transition: 0.5s;
+}
+
+.menu__item-field:hover {
+  opacity: 0.7;
+  color: white;
+  transition: 0.5s;
+}
+
+.menu__item-field:active {
+  opacity: 0.5;
+  color: rgb(187, 76, 100);    
+
+}
+
+.menu .menu__item:checked + .menu__item-field {
+  background-color: rgba(187, 76, 100, .8);
+  box-shadow: 0 1px 3px rgb(66, 20, 30);
+}
+
+.task-form__field {
+  width: 230px;
+  height: 30px;
+  box-shadow: inset -1px -2px 2px 0 lightgray;
+  border: 1px solid lightgray;
+  margin: 5px;
+  padding: 5px;
+  outline: none;  
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.task-form__field-name {
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  margin: 5px;  
+}
+
+.btn {
+  width: 220px;
+  height: 40px;  
+  margin: 15px;
+  margin-left: 100px;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 1px;
+  background-color: rgb(125, 163, 214);
+  box-shadow: inset -1px -1px 2px 0 rgb(51, 90, 145);
+  transition: 0.5s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+  background-color: rgb(125, 163, 214);  
+}
+
+.btn:active {
+  opacity: 0.7;
+  transition: 0.3s;  
+}
+
+.task__result {
+  width: 42%;
+  height: 200px;
+  overflow: scroll;
+  background-color: lightyellow;
+  box-shadow: inset -3px 1px 3px rgba(0, 0, 0, .3),
+    inset 1px -1px 3px rgba(0, 0, 0, .3),
+    1px 1px 3px rgba(0, 0, 0, .3);
+}
+
+.task2 .task-form__field-name.label {
+  width: 270px;  
+}
+
+.task2 .task-form__field-name {
+  display: inline-block;
+  width: 5px;
+}
+
+.task2 .task-form__field {
+  display: inline-block;
+}
+
+.task2 .btn {
+  margin-left: 160px;
+}
+
+.task3 .btn {
+  width: 170px;  
+  margin-left: 0;  
+}
+
+.task6 .task-form__field-name {
+  width: 90px;
+}
+
+.task6 .btn {
+  margin-left: 120px;  
+}
+
+.task7 .task-form__choice {
+  margin-bottom: 20px;
+
+}
+
+.task7 .task-form__choice-name {
+  display: inline-block;
+  width: 60px;   
+}

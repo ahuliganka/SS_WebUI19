@@ -13,7 +13,6 @@ let getRangeLimits = obj => {
   return obj;
 }
 
-
 let getFibonacciArrayByRange = obj => {
   const ArrayByRange = [1, 1];
   let j = 1;

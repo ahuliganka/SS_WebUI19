@@ -1,22 +1,24 @@
 let extractPalindrome = num => {
+  let strToNumber = +num;
+  // console.log(typeof num);  
 
-  if ( !isParameter(num) ) {
+  if ( !isParameter(strToNumber) ) {
     return '{status: ‘' + Error.status + '’, reason: ‘' + Error.reason[0] + '"' + extractPalindrome.name + '"\'}';
   }
 
-  if (typeof num !== "number") {
+  if (typeof strToNumber !== "number") {
     return '{status: ‘' + Error.status + '’, reason: ‘' + Error.reason[1] + '\'}';
   }
 
-  if ( num < 10 ) {
+  if ( strToNumber < 10 ) {
     return '{status: ‘' + Error.status + '’, reason: ‘' + Error.reason[2] + '\'}';
   }
 
-  if (num !== Math.trunc(num)) {
+  if (strToNumber !== Math.trunc(strToNumber)) {
     return '{status: ‘' + Error.status + '’, reason: ‘' + Error.reason[1] + '\'}';
   }
  
-  return findPalindrome(num);
+  return findPalindrome(strToNumber);
 }
 
 let findPalindrome = arg => {

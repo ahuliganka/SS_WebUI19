@@ -1,1 +1,1 @@
-Implementation of viewing results on a page
+Optimizing of viewing results on a page. Adding view of the Task 5 and others

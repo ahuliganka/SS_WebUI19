@@ -1,1 +1,1 @@
-# SS_WebUI19
+Clock-Calendar is completed, but web-component isn't ready yet

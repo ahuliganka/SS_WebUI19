@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>HW2_Clock-Calendar</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="fonts.css" />
+</head>
+
+<body class="page">
+
+  <template id="tmpl">
+    <style>
+      .clock-calendar {
+        background-color: blueviolet;
+        width: 900px;
+        height: 200px;
+        margin: 38vh auto;
+        font-size: 200px;
+        text-align: center;
+        font-family: "DS-DIGIT", sans-serif;
+      }
+    </style>
+    <div class="clock-calendar">
+      <slot></slot>
+    </div>
+  </template>
+
+  <script>
+    let tmpl = document.querySelector('#tmpl');
+
+    customElements.define('clock-calendar', class extends HTMLElement {
+      constructor() {
+        super();
+        let shadowRoot = this.attachShadow({ mode: 'open' });
+        shadowRoot.appendChild(tmpl.content.cloneNode(true));
+      }
+      
+    });  
+  </script>
+
+  <clock-calendar></clock-calendar>
+
+  <script src="classes.js"></script>
+  <script src="page.js"></script>
+
+</body>
+
+</html>

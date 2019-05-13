@@ -1,0 +1,104 @@
+[
+    {
+        "id": "21",
+        "type": "cat",
+        "color":"striped",
+        "price":"36.75 $",               
+        "name": "A little bit confused cat",
+        "isFluffy":"true1",        
+        "imageUrl":"../img/cat 6.jpg"
+    },
+    {
+        "id":"22",
+        "type":"cat",                
+        "color":"gray",
+        "price":"5.20 $",                
+        "name":"A very compact cat",
+        "isFluffy":"tru1e",        
+        "imageUrl":"../img/cat 4.jpg"
+    },
+    {
+        "id": "23",
+        "type": "cat",
+        "color":"white",
+        "price":"36.75 $",               
+        "name": "A cat who doesn't trust",
+        "isFluffy":"false",        
+        "imageUrl":"../img/bold_cat 1.jpg"
+    },
+    {
+        "id":"24",
+        "type":"cat",                
+        "color":"white-brown",
+        "price":"5.20 $",                
+        "name":"He doesn't approve of current policy",
+        "isFluffy":"false",        
+        "imageUrl":"../img/cat 5.jpg"
+    },
+    {
+        "id": "25",
+        "type": "cat",
+        "color":"gray",
+        "price":"360.75 $",               
+        "name": "A cat who likes your blanket",
+        "isFluffy":"false",        
+        "imageUrl":"../img/bold_cat 2.jpg"
+    },
+    {
+        "id":"26",
+        "type":"cat",                
+        "color":"white-brown",
+        "price":"5.20 $",                
+        "name":"Don't disturb him & he won't disturb you",
+        "isFluffy":"false",        
+        "imageUrl":"../img/cat 7.png"
+    },       
+    {
+        "id":"11",
+        "type":"dog",
+        "color":"white",
+        "price":"500.00 $",
+        "name":"A very loyal dog",
+        "imageUrl":"../img/dog 1.jpg"
+    },
+    {
+        "id":"12",
+        "type":"dog",
+        "color":"red-brown",
+        "price":"560.44 $",                         
+        "name":"Big Ears",
+        "imageUrl":"../img/dog 2.jpg"
+    },
+    {
+        "id":"13",
+        "type":"dog",
+        "color":"beige",
+        "price":"128.00 $",                         
+        "name":"Mr. Smiley's",
+        "imageUrl":"../img/dog 3.jpg"
+    },    
+    {
+        "id":"31",
+        "type":"hamster",
+        "color":"white",        
+        "price":"33.30",       
+        "isFluffy":"true",        
+        "imageUrl":"../img/hamster.jpg"
+    },
+    {
+        "id":"32",
+        "type":"hamster",
+        "color":"white",        
+        "price":"33.30 $",       
+        "isFluffy":"false",        
+        "imageUrl":"../img/hamster 2.jpg"
+    },
+    {
+        "id":"33",
+        "type":"hamster",
+        "color":"gray",        
+        "price":"333.30 $",       
+        "isFluffy":"false",        
+        "imageUrl":"../img/hamster 3.jpg"
+    } 
+]

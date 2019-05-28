@@ -68,6 +68,23 @@
   padding: 5px;  
 }
 
+.pets-list__item:hover {
+  color: #ffffff;
+  background-color: #ffa600;
+  transition: .1s;
+}
+
+.pets-list__item:active {
+  color: #ffffff;
+  background-color: #ff8800;
+  transition: .2s;
+}
+
+.pets-list__item.active {
+  color: #0066cc;
+  background-color: #dbdbdb;
+}
+
 .pet-view {
   display: none;
   grid-area: 1 / 2 / 3 / 2;
@@ -82,18 +99,6 @@
   text-align: center;
   font-size: 24px;
   color: #6e6d6d;
-}
-
-.petshop li:hover {
-  color: #ffffff;
-  background-color: #ffa600;
-  transition: .1s;
-}
-
-.petshop li:active {
-  color: #ffffff;
-  background-color: #ff8800;
-  transition: .2s;
 }
 
 .pet-image {

@@ -1,21 +1,10 @@
 class PetShop {
   constructor(petShopView) {
     this.petShopView = petShopView;
-    this.dogsArray = [];
-    this.catsArray = [];
-    this.hamstersArray = [];
   }
 
   initialize() {
-    this.getData(this.dividePetsByType.bind(this));
-  }
-
-  getCurrentPet(petName) {
-    this.cat.forEach(pet => {
-      if (pet.name === petName) {
-        this.petShopView.renderPetInfo(pet);
-      }
-    });
+    this.getData(this.createPetsLists.bind(this));
   }
 
   getData(callback) {
@@ -40,37 +29,53 @@ class PetShop {
     }
   }
 
-  dividePetsByType(petsArray) {
-    petsArray.forEach(pet => {
-      if (pet.type === 'dog') {
-        this.dog = new Dog(pet.id, pet.color, pet.price, pet.name, pet.imageUrl);
-        this.dogsArray.push(this.dog);
+  createPetsLists(petsArray) {
+    this.petShopView.renderPageSections();
 
-      } else if (pet.type === 'cat') {
-        this.cat = new Cat(pet.id, pet.color, pet.price, pet.name, pet.isFluffy, pet.imageUrl);
-        this.catsArray.push(this.cat);
-
-      } else if (pet.type === 'hamster') {
-        this.hamster = new Hamster(pet.id, pet.color, pet.price, pet.isFluffy, pet.imageUrl);
-        this.hamstersArray.push(this.hamster);
-      }
-    });
-    this.petShopView.renderLists();
-    this.getAllCats(this.catsArray);
+    this.getAllCats(petsArray);
     this.getPetsWithPriceGreaterThanAverage(petsArray);
     this.getWhiteOrFluffyPets(petsArray);
   }
 
-  getAllCats(catsList) {
-    return this.petShopView.renderAllCatsList(catsList);
+  getAllCats(petsArray) {
+    let cats = [];
+    petsArray.forEach(pet => {
+      if (pet.type === 'cat') {
+        cats.push(new Cat(pet.id, pet.color, pet.price, pet.name, pet.isFluffy, pet.imageUrl));
+      }
+    });
+    return this.petShopView.renderAllCatsList(cats);
   }
 
-  getPetsWithPriceGreaterThanAverage(petsList) {
-    return this.petShopView.renderPetsWithPriceGreaterThanAverageList(petsList);
+  getPetsWithPriceGreaterThanAverage(pets) {
+    let petsWithPriceGreaterThanAverage = [];
+    let averagePrice = this.calculateAveragePrice(pets);
+
+    pets.forEach(pet => {
+      pet.price = parseFloat(pet.price);
+
+      if (pet.price > averagePrice) {
+        petsWithPriceGreaterThanAverage.push(pet);
+      }
+    });
+
+    return this.petShopView.renderPetsWithPriceGreaterThanAverageList(petsWithPriceGreaterThanAverage, averagePrice);
   }
 
-  getWhiteOrFluffyPets(petsList) {
-    return this.petShopView.renderWhiteOrFluffyPetsList(petsList);
+  getWhiteOrFluffyPets(pets) {
+    let whiteOrFluffyPets = [];
+    pets.forEach(pet => {
+      if ((pet.color === 'white') || (pet.isFluffy === 'true')) {
+        whiteOrFluffyPets.push(pet);
+      }
+    });
+    return this.petShopView.renderWhiteOrFluffyPetsList(whiteOrFluffyPets);
+  }
+
+  calculateAveragePrice(pets) {
+    let sum = 0;
+    pets.forEach(pet => sum += parseFloat(pet.price));
+    return +(sum / pets.length).toFixed(2);
   }
 
 }

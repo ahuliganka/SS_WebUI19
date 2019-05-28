@@ -29,9 +29,8 @@ class PetShopView {
       let li = document.querySelector('.pets-list__cats-list').appendChild(document.createElement('li'));
       li.classList.add('pets-list__item');
       li.innerHTML = cat.name;
-      li.addEventListener('click', () => {
-        this.renderPetView(cat);
-      });
+
+      this.handleOfSelectingListItemEvent(li, cat);
     });
   }
 
@@ -46,11 +45,7 @@ class PetShopView {
         li.innerHTML = pet.type + ' N' + pet.id + ' <strong>(' + pet.price.toFixed(2) + ')</strong>';
       }
 
-      li.addEventListener('click', this.removeActiveClassFromListItem);
-      li.addEventListener('click', () => {
-        li.classList.add('active');
-        this.renderPetView(pet);
-      });
+      this.handleOfSelectingListItemEvent(li, pet);
     });
 
     let averagePriceInHeading = document.querySelector('.pets-list__price-greater-average .pets-list__heading');
@@ -66,11 +61,7 @@ class PetShopView {
       (pet.name) ? (li.innerHTML = pet.type + ': ' + pet.name) :
         (li.innerHTML = pet.type + ' N' + pet.id);
 
-      li.addEventListener('click', this.removeActiveClassFromListItem);
-      li.addEventListener('click', () => {
-        li.classList.add('active');
-        this.renderPetView(pet);
-      });
+      this.handleOfSelectingListItemEvent(li, pet);
     });
   }
 
@@ -85,6 +76,14 @@ class PetShopView {
     <a class="button">To cart</a>
     `;
     this.petView.innerHTML = petViewContent;
+  }
+
+  handleOfSelectingListItemEvent(elem, listItem) {
+    elem.addEventListener('click', this.removeActiveClassFromListItem);
+    elem.addEventListener('click', () => {
+      elem.classList.add('active');
+      this.renderPetView(listItem);
+    });
   }
 
   removeActiveClassFromListItem() {
